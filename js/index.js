@@ -41,11 +41,23 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+const nav = document.querySelector('nav');
+
 const navItems = document.querySelectorAll('nav > a');
 for (let i = 0; i < 6; i++) {
   navItems[i].textContent = siteContent['nav'][`nav-item-${i+1}`];
   navItems[i].style.color = 'green';
 }
+
+const navHome = document.createElement('a');
+navHome.textContent = 'Home';
+navHome.style.color = 'green';
+nav.prepend(navHome);
+
+const navOther = document.createElement('a');
+navOther.textContent = 'Other';
+navOther.style.color = 'green';
+nav.appendChild(navOther);
 
 const logoImg = document.getElementById('logo-img');
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
